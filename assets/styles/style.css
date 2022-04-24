@@ -60,16 +60,16 @@ li {
 }
 
 @media (min-width: 1025px){
-    #header {
+    /* #header {
         position: initial;
-    }
+    } */
 
     .header__wrapper {
         justify-content: flex-start;
     }
 
     .logo {
-        width: 10%;
+        width: auto;
         margin-right: 2rem;
     }
 }
@@ -137,7 +137,7 @@ li {
     right: 0;
     height: 100vh;
     width: 0;
-    overflow: hidden;
+    overflow-x: hidden;
     transition: width 0.3s linear;
     background-color: var(--neutral-color-1);
     z-index: 10;
@@ -220,13 +220,12 @@ li {
     .navigation {
         background-color: transparent;
         position: relative;
-        width: auto;
+        width: 95%;
         height: auto;
         overflow: visible;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 90%;
         transition: none;
     }
 
@@ -249,8 +248,11 @@ li {
         top: 100%;
         padding: 0;
         background-color: var(--neutral-color-1);
-        box-shadow: 0px 0px 15px 1px var(--neutral-color-3);
         border-radius: 10px;
+    }
+
+    .navlist__item:hover > .navlist__dropdown {
+        box-shadow: 0px 0px 15px 1px var(--neutral-color-3);
     }
 
     .navlist > .navlist__item:nth-child(1) .navlist__dropdown {
@@ -311,6 +313,7 @@ li {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 5rem;
 }
 
 .btn {
@@ -348,6 +351,11 @@ li {
         display: flex;
         flex-direction: row;
         align-items: center;
+        margin: 0;
+    }
+
+    .btn-login {
+        margin: 0 0.6rem 0 0;
     }
 }
 
@@ -367,12 +375,9 @@ li {
     margin: 5rem auto 0;
 }
 
-@media (min-width: 1025px){
-    .container {
-        margin-top: 0;
-    }
+.grid {
+    max-width: 1440px;
 }
-
 
 
 /*
@@ -381,7 +386,14 @@ li {
 
 picture source,
 picture img {
-    max-width: 100%;
+    width: 100%;
+}
+
+@media (min-width: 1025px){
+    picture source,
+    picture img {
+        max-height: 700px;
+    }
 }
 
 
@@ -392,6 +404,8 @@ picture img {
 
 .description {
     padding: 3rem 1rem;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 .title {
@@ -427,8 +441,73 @@ picture img {
 }
 
 .clients {
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
+    flex-wrap: wrap;
     margin-top: 3rem;
+}
+
+@media (min-width: 1025px){
+    section {
+        padding: 0 2rem;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 50% 40%;
+        grid-template-rows: 1fr;
+        grid-gap: 10%;
+    }
+
+    .description {
+        order: 1;
+        grid-row: 1/2;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+    }
+    
+    .title {
+        font-size: 4.4rem;
+        text-align: initial;
+    }
+
+    .description p {
+        text-align: initial;
+        /* font-size: 1.3rem; */
+    }
+
+    .btn-learn-more {
+        margin: 3rem 0;
+    }
+
+    .hero {
+        order: 2;
+        grid-row: 1/2;
+    }
+
+    .clients {
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 1200px){
+    .title {
+        font-size: 5.4rem;
+    }
+
+    .description p {
+        font-size: 1.3rem
+    }
 }

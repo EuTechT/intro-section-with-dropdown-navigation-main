@@ -12,4 +12,4 @@ btnMenu.addEventListener('click', () => {
         nav.classList.remove('navigation--show');
         overlay.classList.remove('overlay--show');
     });
-})
+});
